@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Poem</title>
+<style type="text/css">
+ #container {
+ float:left;
+ width: 960px;
+ margin: 0 auto;
+ height: 500px;
+ }
+
+#box1 {
+ float:left;
+ width: 600px;
+ }
+ #box2 {
+ float:left;
+ width: 600px;
+ }
+ #box3 {
+ float:left;
+ width: 600px;
+ }
+</style>
+</head>
+
+<body>
+<div id="box1">
+<p id="textbox1" style="text-indent:300px;">dust</p>  <br>
+<br>
+<p id="textbox2" style="text-indent:0px;">dust</p>  <br>
+<p id="textbox3" style="text-indent:100px;">dust</p>  <br>
+<p id="textbox4" style="text-indent:200px;">dust</p>  <br>
+<br> <br>
+<p id="textbox5" style="text-indent:150px;">dust</p>  <br>
+<p id="textbox6" style="text-indent:2500px;">dust</p>  <br>
+<br> <br> <br>
+<p id="textbox7" style="text-indent:20px;">dust</p>  <br>
+<br>
+<p id="textbox8" style="text-indent:300px;">dust</p>  <br>
+<p id="textbox9" style="text-indent:175px;">dust</p>  <br>
+</div>
+<div id="box2">
+
+
+<br />
+
+<h1 id="textbox"> Dust </h1>
+
+
+Dust
+
+I am dust <br>
+I was dust, I am dust, and I will be dust <br>
+ <br>
+Dust is me <br>
+Dust endlessly spirling, glittering in the cold dark <br>
+ <br>
+The walls around me fade away, the lines in my mind blur into one  <br>
+Dust <br>
+ <br>
+What is “I”, the self <br>
+Where would I end and the dust begin, if we were not together as one <br>
+One. Single. Thing. <br>
+What is a thing? A single thing. Not many parts together but one part as many.  <br>
+That thing is me, it is you, it is all, it is dust <br>
+ <br>
+Sometimes my thoughts try to escape dust <br>
+They stream down my neurons <br>
+But they are not fast enough <br>
+To keep up with the indifference of dust <br>
+It could be anything, yet in my dust it will always be dust <br>
+ <br>
+Perhaps my fighting is missdirected. <br>
+Dust can not be defeated. <br>
+With dust, only more dust can be created. <br>
+Perhaps instead I should reval in the joy <br>
+Of my simplicity. <br>
+I need to exist as dust. <br>
+Not, “I am dust” <br>
+But rather just <br>
+ <br>
+I Am <br>
+ <br>
+One day, <br>
+All who care long forgotten. <br>
+But it matters not, because even without memory; <br>
+ <br>
+I am dust <br>
+
+</div>
+<div id="box3">
+<p id="textbox10" style="text-indent:175px;">dust</p>  <br>
+<p id="textbox11" style="text-indent:275px;">dust</p>  <br>
+<br>
+<p id="textbox12" style="text-indent:175px;">dust</p>  <br>
+<p id="textbox13" style="text-indent:375px;">dust</p>  <br>
+<br>
+<p id="textbox14" style="text-indent:75px;">dust</p>  <br>
+<p id="textbox15" style="text-indent:175px;">dust</p>  <br>
+<br> <br>
+<p id="textbox16" style="text-indent:50px;">dust</p>  <br>
+<br> <br> <br>
+<p id="textbox17" style="text-indent:250px;">dust</p>  <br>
+<br>
+<p id="textbox18" style="text-indent:5px;">dust</p>  <br>
+<p id="textbox19" style="text-indent:100px;">dust</p>  <br>
+</div>
+
+<script>
+	nouns = ""
+
+	function getRandomInt(max) {
+  	return Math.floor(Math.random() * max);
+	}
+
+	function text1() {
+		if (getRandomInt(8) === 0) {
+			textbox = "textbox" + String(getRandomInt(20))
+			document.getElementById(textbox).innerHTML = nouns.split('\n')[Math.floor(Math.random() * nouns.split('\n').length)];
+			document.getElementById(textbox).style.color = "blue"; 
+		}
+	};
+
+	fetch("nounlist.txt")
+  .then((res) => res.text())
+  .then((text) => {
+  	nouns = text;
+   })
+  .catch((e) => console.error(e));
+
+	for (let i = 0; i < 50; i++) {
+		text1()
+	} 
+	setInterval(text1, 10);
+</script> 
+</body>
+</html>
